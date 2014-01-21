@@ -7,15 +7,46 @@
 //
 
 #import "AppDelegate.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import "ViewController.h"
 
 @implementation AppDelegate
-
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    
+    // You can add your app-specific url handling code here if needed
+    
+    return wasHandled;
+}
+//- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+//{
+//    // Override point for customization after application launch.
+//    [FBLoginView class];
+//    
+//    return YES;
+//}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    // Override point for customization after application launch.
+//    
+//    // Load the FBProfilePictureView
+//    // You can find more information about why you need to add this line of code in our troubleshooting guide
+//    // https://developers.facebook.com/docs/ios/troubleshooting#objc
+//    [FBProfilePictureView class];
+//    
+//    // Create a LoginUIViewController instance where the login button will be
+//    ViewController *loginUIViewController = [[ViewController alloc] init];
+//    
+//    // Set loginUIViewController as root view controller
+//    [[self window] setRootViewController:loginUIViewController];
+//    
+//    self.window.backgroundColor = [UIColor clearColor];
+//    [self.window makeKeyAndVisible];
     return YES;
 }
-							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

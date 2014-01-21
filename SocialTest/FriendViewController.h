@@ -6,10 +6,10 @@
 //  Copyright (c) 2014년 T. All rights reserved.
 //
 
-#import "ViewController.h"
-#import <Social/Social.h>
-#import <Accounts/Accounts.h>
+#import <UIKit/UIKit.h>
+//#import <Social/Social.h>
+//#import <Accounts/Accounts.h>
 
-@interface FriendViewController : ViewController <UITableViewDelegate, UITableViewDataSource>
+@interface FriendViewController  : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

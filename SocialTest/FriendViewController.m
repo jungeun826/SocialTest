@@ -7,6 +7,8 @@
 //
 
 #import "FriendViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
+
 #define FACEBOOK_APPID @"628059973914914"
 
 @interface FriendViewController ()
@@ -17,52 +19,53 @@
 @end
 
 @implementation FriendViewController
--(void)showTimeline{
-    ACAccountStore *accountStore = [[ACAccountStore alloc]init];
-    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
-    
-    NSDictionary *options = @{ACFacebookAppIdKey:FACEBOOK_APPID, ACFacebookPermissionsKey:@[@"read_stream"/*,@"basic_info"*/], ACFacebookAudienceKey:ACFacebookAudienceEveryone};
-    
-    [accountStore requestAccessToAccountsWithType:accountType options:options completion:^(BOOL granted, NSError *error){
-        if(error)
-            NSLog(@"Error : %@", error);
-        if(granted){
-            NSLog(@"권한 승인 성공");
-            NSArray *accounts = [accountStore accountsWithAccountType:accountType];
-            self.facebookAccount = [accounts lastObject];
-            
-            [self requestFeed];
-        }else{
-            NSLog(@"권한 승인 실패 ");
-        }
-    }];
-}
--(void)requestFeed{
-    NSString *serviceType = SLServiceTypeFacebook;
-    SLRequestMethod method = SLRequestMethodGET;
-    
-    NSURL *url = [NSURL URLWithString:@"https://graph.facebook.com/me/friends"];
-    NSDictionary *param = nil;
-    
-    SLRequest *request = [SLRequest requestForServiceType:serviceType requestMethod:method URL:url parameters:param];
-    request.account = self.facebookAccount;
-    
-    [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
-        if(error != nil){
-            NSLog(@"뉴스 피드 정보 얻기 실패 :%@", error);
-            return;
-        }
-        
-        __autoreleasing NSError *parseError = nil;
-        NSDictionary *resualt = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&parseError];
-        
-        self.data = resualt[@"data"];
-        
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [self.table reloadData];
-        }];
-    }];
-}
+
+//-(void)showFriends{
+//    ACAccountStore *accountStore = [[ACAccountStore alloc]init];
+//    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
+//    
+//    NSDictionary *options = @{ACFacebookAppIdKey:FACEBOOK_APPID, ACFacebookPermissionsKey:@[@"read_stream"/*,@"basic_info"*/], ACFacebookAudienceKey:ACFacebookAudienceEveryone};
+//    
+//    [accountStore requestAccessToAccountsWithType:accountType options:options completion:^(BOOL granted, NSError *error){
+//        if(error)
+//            NSLog(@"Error : %@", error);
+//        if(granted){
+//            NSLog(@"권한 승인 성공");
+//            NSArray *accounts = [accountStore accountsWithAccountType:accountType];
+//            self.facebookAccount = [accounts lastObject];
+//            
+//            [self requestFriends];
+//        }else{
+//            NSLog(@"권한 승인 실패 ");
+//        }
+//    }];
+//}
+//-(void)requestFriends{
+//    NSString *serviceType = SLServiceTypeFacebook;
+//    SLRequestMethod method = SLRequestMethodGET;
+//    
+//    NSURL *url = [NSURL URLWithString:@"https://graph.facebook.com/me/friends"];
+//    NSDictionary *param = nil;
+//    
+//    SLRequest *request = [SLRequest requestForServiceType:serviceType requestMethod:method URL:url parameters:param];
+//    request.account = self.facebookAccount;
+//    
+//    [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+//        if(error != nil){
+//            NSLog(@"뉴스 피드 정보 얻기 실패 :%@", error);
+//            return;
+//        }
+//        
+//        __autoreleasing NSError *parseError = nil;
+//        NSDictionary *resualt = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&parseError];
+//        
+//        self.data = resualt[@"data"];
+//        
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//            [self.table reloadData];
+//        }];
+//    }];
+//}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.data count];
 }
@@ -80,8 +83,17 @@
     
     return cell;
 }
+-(void)showFriend{
+    FBRequest* friendsRequest = [FBRequest requestForMyFriends];
+    [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
+                                                  NSDictionary* result,
+                                                  NSError *error) {
+        self.data = [result objectForKey:@"data"];
+        [self.table reloadData];
+    }];
+}
 -(void)viewWillAppear:(BOOL)animated{
-    [self showTimeline];
+    [self showFriend];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

@@ -6,8 +6,8 @@
 //  Copyright (c) 2014년 T. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface StreamViewController : ViewController <UITableViewDataSource, UITableViewDelegate>
+@interface StreamViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

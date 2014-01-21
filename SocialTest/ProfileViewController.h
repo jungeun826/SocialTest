@@ -6,8 +6,8 @@
 //  Copyright (c) 2014년 T. All rights reserved.
 //
 
-#import "ViewController.h"
-
-@interface ProfileViewController : ViewController
+#import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
+@interface ProfileViewController : UIViewController
 
 @end

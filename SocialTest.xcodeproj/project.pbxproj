@@ -25,6 +25,7 @@
 		00FFE056188E39A9001A6535 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FFE055188E39A9001A6535 /* ProfileViewController.m */; };
 		00FFE08C188E4754001A6535 /* StreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FFE08B188E4754001A6535 /* StreamViewController.m */; };
 		00FFE092188E4F63001A6535 /* FriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FFE091188E4F63001A6535 /* FriendViewController.m */; };
+		00FFE097188E5B5F001A6535 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FFE096188E5B5F001A6535 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		00FFE08B188E4754001A6535 /* StreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamViewController.m; sourceTree = "<group>"; };
 		00FFE090188E4F63001A6535 /* FriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendViewController.h; sourceTree = "<group>"; };
 		00FFE091188E4F63001A6535 /* FriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendViewController.m; sourceTree = "<group>"; };
+		00FFE096188E5B5F001A6535 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00FFE01E188E0D1A001A6535 /* CoreGraphics.framework in Frameworks */,
+				00FFE097188E5B5F001A6535 /* FacebookSDK.framework in Frameworks */,
 				00FFE020188E0D1A001A6535 /* UIKit.framework in Frameworks */,
 				00FFE01C188E0D1A001A6535 /* Foundation.framework in Frameworks */,
 			);
@@ -112,6 +115,7 @@
 		00FFE01A188E0D1A001A6535 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00FFE096188E5B5F001A6535 /* FacebookSDK.framework */,
 				00FFE01B188E0D1A001A6535 /* Foundation.framework */,
 				00FFE01D188E0D1A001A6535 /* CoreGraphics.framework */,
 				00FFE01F188E0D1A001A6535 /* UIKit.framework */,
@@ -400,6 +404,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/sdt-1/Documents/Projects/SocialTest",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialTest/SocialTest-Prefix.pch";
 				INFOPLIST_FILE = "SocialTest/SocialTest-Info.plist";
@@ -417,6 +425,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/sdt-1/Documents/Projects/SocialTest",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialTest/SocialTest-Prefix.pch";
 				INFOPLIST_FILE = "SocialTest/SocialTest-Info.plist";
