@@ -22,6 +22,7 @@
 		00FFE045188E0D1A001A6535 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00FFE043188E0D1A001A6535 /* InfoPlist.strings */; };
 		00FFE047188E0D1A001A6535 /* SocialTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FFE046188E0D1A001A6535 /* SocialTestTests.m */; };
 		00FFE053188E0F6B001A6535 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FFE052188E0F6B001A6535 /* image.png */; };
+		00FFE056188E39A9001A6535 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FFE055188E39A9001A6535 /* ProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		00FFE044188E0D1A001A6535 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00FFE046188E0D1A001A6535 /* SocialTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialTestTests.m; sourceTree = "<group>"; };
 		00FFE052188E0F6B001A6535 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		00FFE054188E39A9001A6535 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		00FFE055188E39A9001A6535 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				00FFE031188E0D1A001A6535 /* ViewController.m */,
 				00FFE033188E0D1A001A6535 /* Images.xcassets */,
 				00FFE022188E0D1A001A6535 /* Supporting Files */,
+				00FFE054188E39A9001A6535 /* ProfileViewController.h */,
+				00FFE055188E39A9001A6535 /* ProfileViewController.m */,
 			);
 			path = SocialTest;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 			files = (
 				00FFE032188E0D1A001A6535 /* ViewController.m in Sources */,
 				00FFE02C188E0D1A001A6535 /* AppDelegate.m in Sources */,
+				00FFE056188E39A9001A6535 /* ProfileViewController.m in Sources */,
 				00FFE028188E0D1A001A6535 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +391,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialTest/SocialTest-Prefix.pch";
 				INFOPLIST_FILE = "SocialTest/SocialTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/sdt-1/Documents/Projects/SocialTest/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -398,6 +408,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialTest/SocialTest-Prefix.pch";
 				INFOPLIST_FILE = "SocialTest/SocialTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/sdt-1/Documents/Projects/SocialTest/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

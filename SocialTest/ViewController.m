@@ -18,7 +18,7 @@
 //    BOOL isService = [SLComposeViewController isAvailableForServiceType:service];
 //    if(isService == YES){
         SLComposeViewController *composer = [SLComposeViewController composeViewControllerForServiceType:service];
-        
+    
         UIImage *image = [UIImage imageNamed:@"image.png"];
         [composer addImage:image];
         
