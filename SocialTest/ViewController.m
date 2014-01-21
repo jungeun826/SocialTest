@@ -15,8 +15,8 @@
 @implementation ViewController
 - (IBAction)showSocialComposer:(id)sender {
     NSString *service = SLServiceTypeFacebook;
-//    BOOL isService = [SLComposeViewController isAvailableForServiceType:service];
-//    if(isService == YES){
+    //    BOOL isService = [SLComposeViewController isAvailableForServiceType:service];
+    //    if(isService == YES){
         SLComposeViewController *composer = [SLComposeViewController composeViewControllerForServiceType:service];
     
         UIImage *image = [UIImage imageNamed:@"image.png"];
@@ -32,7 +32,7 @@
         };
         
         [self presentViewController:composer animated:YES completion:nil];
-//    }
+    //    }
 }
 
 - (IBAction)showActivity:(id)sender{

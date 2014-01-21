@@ -23,6 +23,8 @@
 		00FFE047188E0D1A001A6535 /* SocialTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FFE046188E0D1A001A6535 /* SocialTestTests.m */; };
 		00FFE053188E0F6B001A6535 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FFE052188E0F6B001A6535 /* image.png */; };
 		00FFE056188E39A9001A6535 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FFE055188E39A9001A6535 /* ProfileViewController.m */; };
+		00FFE08C188E4754001A6535 /* StreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FFE08B188E4754001A6535 /* StreamViewController.m */; };
+		00FFE092188E4F63001A6535 /* FriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FFE091188E4F63001A6535 /* FriendViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,10 @@
 		00FFE052188E0F6B001A6535 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		00FFE054188E39A9001A6535 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		00FFE055188E39A9001A6535 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		00FFE08A188E4754001A6535 /* StreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamViewController.h; sourceTree = "<group>"; };
+		00FFE08B188E4754001A6535 /* StreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamViewController.m; sourceTree = "<group>"; };
+		00FFE090188E4F63001A6535 /* FriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendViewController.h; sourceTree = "<group>"; };
+		00FFE091188E4F63001A6535 /* FriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,10 @@
 				00FFE022188E0D1A001A6535 /* Supporting Files */,
 				00FFE054188E39A9001A6535 /* ProfileViewController.h */,
 				00FFE055188E39A9001A6535 /* ProfileViewController.m */,
+				00FFE08A188E4754001A6535 /* StreamViewController.h */,
+				00FFE08B188E4754001A6535 /* StreamViewController.m */,
+				00FFE090188E4F63001A6535 /* FriendViewController.h */,
+				00FFE091188E4F63001A6535 /* FriendViewController.m */,
 			);
 			path = SocialTest;
 			sourceTree = "<group>";
@@ -260,7 +270,9 @@
 			files = (
 				00FFE032188E0D1A001A6535 /* ViewController.m in Sources */,
 				00FFE02C188E0D1A001A6535 /* AppDelegate.m in Sources */,
+				00FFE08C188E4754001A6535 /* StreamViewController.m in Sources */,
 				00FFE056188E39A9001A6535 /* ProfileViewController.m in Sources */,
+				00FFE092188E4F63001A6535 /* FriendViewController.m in Sources */,
 				00FFE028188E0D1A001A6535 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
